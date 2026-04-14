@@ -1,558 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Dos Gallos Landscaping</title>
+  <meta name="description"
+    content="Affordable landscaping, lawn care, and yard maintenance in Elgin, Illinois. Free estimates." />
   <link rel="icon" type="image/png" href="images/Dos_Gallos.png" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <style>
-  
-    html {
-      scroll-padding-top: 60px;
-      scroll-behavior: smooth;
-    }
-    
-	body {
-      font-family: sans-serif;
-      color: #2d3748;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Navbar */
-    .navbar {
-      border-bottom: 4px solid #CE2238;
-    }
-   
-    .navbar-logo {
-      max-height: 60px;
-      width: auto;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-   
-    /* Logo Hover Effect */
-    .navbar-logo:hover {
-        transform: scale(1.1);
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Navbar Hover Animation */
-    .navbar-nav .nav-link {
-      position: relative;
-      color: #2d3748;
-      font-weight: bold;
-      transition: color 0.3s ease;
-    }
-   
-    .navbar-nav .nav-link::after {
-      content: "";
-      position: absolute;
-      width: 0%;
-      height: 2px;
-      bottom: 0;
-      left: 0;
-      background-color: #CE2238;
-      transition: width 0.3s ease;
-    }
-   
-    .navbar-nav .nav-link:hover {
-      color: #CE2238;
-    }
-   
-    .navbar-nav .nav-link:hover::after {
-      width: 100%;
-    }
-
-    /* Hero Section */
-    #home {
-      background-color: #1a202c;
-      color: white;
-      text-align: left;
-      padding-top: 120px;
-      padding-bottom: 40px;
-    }
-
-    .hero-content {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-    }
-
-    .hero-left {
-      flex: 1;
-      max-width: 40%;
-    }
-   
-    .hero-right {
-      flex: 1.3;
-      min-width: 300px;
-      max-width: 60%;  
-    }
-
-    .hero-title {
-      font-size: 3rem;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      font-weight: 900;
-      line-height: 1.2;
-      color: #f7fafc;
-    }
-
-    .hero-subtext {
-      font-size: 1.2rem;
-      margin: 20px 0;
-      color: #e2e8f0;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    /* GIF Styling */
-    .hero-right img {
-      width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .hero-content {
-        flex-direction: column;
-        text-align: center;
-        gap: 40px;
-      }
-
-      .hero-left, .hero-right {
-        max-width: 100%;
-      }
-
-      .hero-title {
-        font-size: 2.25rem;
-      }
-
-      .hero-subtext {
-        font-size: 1rem;
-      }
-
-      .hero-buttons {
-        justify-content: center;
-      }
-
-      .hero-right {
-        margin-top: 20px;
-      }
-    }
-
-    /* General Section Styling */
-    section {
-      padding: 64px 32px;
-    }
-
-    /* Services Section */
-    #services {
-      padding: 60px 0;
-      background-color: #ffffff;
-    }
-
-    .container {
-      width: 100%;
-      margin: 0 auto;
-    }
-
-    .services-title {
-      font-size: 36px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .service-card {
-      background-color: lightgray;
-      padding: 24px;
-      border-radius: 16px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s ease;
-      text-align: center;
-    }
-
-    .service-card:hover {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-    }
-
-    .service-icon {
-      width: 200px;
-      height: 200px;
-    }
-
-    .service-title {
-      font-size: 24px;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .service-description {
-      color: black;
-    }
-
-    /* About Section */
-    #about {
-      padding: 60px 0;
-      background-color: #CE2238;
-    }
-
-    .about-content {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      align-items: center;
-    }
-
-    .about-text {
-      flex: 1;
-      max-width: 50%;
-    }
-
-    .about-title {
-      font-size: 32px;
-      font-weight: bold;
-      color: white;
-      margin-bottom: 16px;
-    }
-
-    .about-subtitle {
-      color: white;
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 16px;
-    }
-
-    .about-description {
-      color: white;
-      line-height: 1.6;
-      font-size: 18px;
-      margin-bottom: 24px;
-    }
-
-    .about-signature {
-      color: white;
-      font-weight: 500;
-      margin-bottom: 24px;
-    }
-
-    .about-image {
-      flex: 1;
-      max-width: 50%;
-      margin-top: 20px;
-    }
-
-    .about-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    /* Quote Section */
-    #quote {
-      padding: 60px 0;
-      background-color: #ffffff;
-    }
-
-    .quote-content {
-      display: flex;
-      gap: 30px;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .quote-image {
-      flex: 1;
-      max-width: 50%;
-      margin-top: 20px;
-    }
-
-    .quote-image img {
-      width: 100%;
-      height: auto;
-      border-radius: 16px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .quote-text {
-      flex: 1;
-      max-width: 50%;
-      text-align: center;
-    }
-
-    .quote-title {
-      font-size: 32px;
-      font-weight: bold;
-      color: #CE2238;
-      margin-bottom: 16px;
-    }
-
-    .quote-description {
-      color: #4a5568;
-      font-size: 18px;
-      line-height: 1.6;
-      margin-bottom: 24px;
-    }
-
-    .primary-btn {
-      background-color: #CE2238;
-      color: white;
-      font-weight: 600;
-      padding: 12px 24px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      border: none;
-    }
-
-    .primary-btn:hover {
-      background-color: #276749;
-    }
-   
-    .secondary-btn {
-      background-color: white;
-      color: black;
-      font-weight: 600;
-      padding: 12px 24px;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      text-decoration: none;
-      transition: background-color 0.3s ease;
-      border: none;
-    }
-
-    .secondary-btn:hover {
-      background-color: gray;
-      color: white;
-    }
-
-    .quote-call {
-      color: #4a5568;
-      font-weight: 500;
-      margin-top: 16px;
-    }
-
-    .quote-call a {
-      color: #CE2238;
-      text-decoration: none;
-    }
-
-    .quote-call a:hover {
-      text-decoration: underline;
-    }
-
-    /* Gallery Section */
-    #gallery {
-      padding: 60px 0;
-      background-color: #ffffff;
-    }
-
-    .gallery-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;  display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .gallery-title {
-      font-size: 32px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .gallery-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
-    }
-
-    .gallery-item img {
-      width: 100%;
-      height: auto;
-      border-radius: 8px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    /* View Gallery Button */
-    .view-gallery-btn {
-        display: inline-block;
-        margin-top: 20px; /* Adds space between the grid and the button */
-        padding: 12px 24px;
-        font-size: 16px;
-        background-color: #276749; /* You can change the color */
-        color: white;
-        font-weight: bold;
-        text-decoration: none;
-        border-radius: 8px;
-        text-align: center;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        transition: background-color 0.3s ease;
-      }
-      
-      .view-gallery-btn:hover {
-        background-color: #CE2238; /* Hover color */
-      }
-      
-      /* Responsive Grid */
-      @media (max-width: 768px) {
-        .gallery-grid {
-          grid-template-columns: 1fr; /* Stack images in a single column on smaller screens */
-        }
-      }
-
-
-/* Why Us Section */
-#why-us {
-    margin: 0;
-    padding: 0;
-  }
-  
-  .why-us-row {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: stretch;
-    text-align: center;
-  }
-  
-  .why-us-box {
-    flex: 1;
-    padding: 100px 20px;
-    color: white;
-  }
-  
-  .why-us-box h3 {
-    font-size: 18px;
-    font-weight: bold;
-    margin-top: 20px;
-    line-height: 1.4;
-  }
-  
-  /* Example Icon Styling */
-  .why-us-icon {
-    width: 100px;
-    height: 100px;
-  }
-  
-  /* why us Background Colors */
-  .black-dark {
-    background-color: #1A202C;
-  }
-  
-  .black-mid {
-    background-color: #141923;
-  }
-  
-  .black-light {
-    background-color: #0D1117;
-  }
-  
-  /* Responsive */
-  @media (max-width: 768px) {
-    .why-us-row {
-      flex-direction: column;
-    }
-  }
-  
-   
-     /* Contact Section */
-    #contact {
-      padding: 60px 0;
-      background-color: #CE2238;
-    }
-    .contact-container {
-      width: 80%;
-      max-width: 800px;
-      margin: 0 auto;
-      background-color: #ffffff;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    }
-
-    .contact-title {
-      font-size: 32px;
-      font-weight: bold;
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      border-radius: 8px;
-      border: 1px solid #e2e8f0;
-      margin-bottom: 16px;
-      font-size: 16px;
-    }
-
-    /* Footer */
-    footer {
-      background-color: black;
-      color: white;
-      text-align: center;
-      padding: 40px;
-    }
-
-    /* Mobile Responsiveness */
-    @media (max-width: 768px) {
-      .services-grid,
-      .gallery-grid,
-      .features-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-text,
-      .about-image,
-      .quote-text,
-      .quote-image {
-        max-width: 100%;
-      }
-
-      .about-content,
-      .quote-content {
-        flex-direction: column;
-        align-items: center;
-      }
-    }
-
-    .scroll-fade {
-      opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-    }
-
-    .scroll-fade.show {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  </style>
+  <link rel="stylesheet" href="/styles/styles.css" />
 </head>
 
 <body>
+  <h1 style="display:none;">
+    Elgin Landscaping Services | Dos Gallos Landscaping
+  </h1>
 
   <!-- Navbar using bootstrap -->
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
@@ -560,7 +23,8 @@
       <a class="navbar-brand" href="">
         <img src="images/Dos_Gallos.png" alt="Dos Gallos Logo" class="navbar-logo">
       </a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
@@ -590,14 +54,22 @@
     <div class="hero-content container">
       <div class="hero-left scroll-fade">
         <h1 class="hero-title">Quality Work, at an Affordable Price!</h1>
-        <p class="hero-subtext">Professional landscaping services with attention to detail, affordable pricing, and reliable service.</p>
+        <p class="hero-subtext">Professional landscaping services with attention to detail, affordable pricing, and
+          reliable service.</p>
         <div class="hero-buttons">
           <a href="#contact" class="primary-btn">Book Now</a>
           <a href="#services" class="secondary-btn">Our Services</a>
         </div>
+        <div class="social-media">Follow us:
+          <a href="https://www.instagram.com/dosgallos95/" target="_blank" rel="noopener noreferrer">
+            <img src="images/instagram-white-icon.png" alt="Instagram" class="social-icon" />
+          </a>
+        </div>
       </div>
       <div class="hero-right scroll-fade">
-        <img src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHR6NDd6cmRuNjk0dHF0dnRmYWtvYTN4ODVpaWRlaDdrb2Z1bmdvMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a1usP8aplIdOQ09GaN/giphy.gif" alt="Landscaping Animation" />
+        <img
+          src="https://media2.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHR6NDd6cmRuNjk0dHF0dnRmYWtvYTN4ODVpaWRlaDdrb2Z1bmdvMiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/a1usP8aplIdOQ09GaN/giphy.gif"
+          alt="Landscaping Animation" />
       </div>
     </div>
   </section>
@@ -605,52 +77,70 @@
   <!-- Services Section -->
   <section id="services">
     <div class="container">
+
       <h3 class="services-title scroll-fade">Our Services</h3>
+      <p class="services-subtitle scroll-fade">
+        Professional landscaping solutions tailored to your home
+      </p>
+
       <div class="services-grid">
 
-        <!-- Lawn Care -->
         <div class="service-card scroll-fade">
-          <img src="images/icons/bw-lawncare-icon.png" class="service-icon">
-          <h4 class="service-title">Lawn Care</h4>
-          <p class="service-description">Regular mowing, edging, and trimming to keep your lawn healthy and beautiful.</p>
+          <div class="service-icon-wrap">🌿</div>
+          <h4>Lawn Care</h4>
+          <p>Regular mowing, edging, and trimming to keep your lawn clean and healthy.</p>
+          <div class="service-tags">
+            <span>Weekly</span><span>Affordable</span>
+          </div>
         </div>
 
-        <!-- Weed Wacking -->
         <div class="service-card scroll-fade">
-          <img src="images/icons/bw-weedwacking-icon.png" class="service-icon">
-          <h4 class="service-title">Weed Wacking</h4>
-          <p class="service-description">Effective trimming and removal of unwanted weeds and overgrowth.</p>
+          <div class="service-icon-wrap">✂️</div>
+          <h4>Weed Control</h4>
+          <p>Fast removal of weeds and overgrowth for a clean, sharp yard.</p>
+          <div class="service-tags">
+            <span>Fast</span><span>Reliable</span>
+          </div>
         </div>
 
-        <!-- Landscaping -->
         <div class="service-card scroll-fade">
-          <img src="images/icons/bw-landscaping-icon.png" class="service-icon">
-          <h4 class="service-title">Landscaping</h4>
-          <p class="service-description">Custom design and layout of your outdoor space for beauty and functionality.</p>
+          <div class="service-icon-wrap">🏡</div>
+          <h4>Landscaping</h4>
+          <p>Full outdoor design and yard improvements for curb appeal.</p>
+          <div class="service-tags">
+            <span>Custom</span><span>Design</span>
+          </div>
         </div>
 
-        <!-- Garden Clearance -->
         <div class="service-card scroll-fade">
-          <img src="images/icons/bw-garden-icon.png" class="service-icon">
-          <h4 class="service-title">Garden Clearance</h4>
-          <p class="service-description">Removal of debris, old plants, and clutter to refresh your garden space.</p>
+          <div class="service-icon-wrap">🧹</div>
+          <h4>Garden Cleanup</h4>
+          <p>We remove debris, dead plants, and refresh your outdoor space.</p>
+          <div class="service-tags">
+            <span>Seasonal</span>
+          </div>
         </div>
 
-        <!-- Grass Installation -->
         <div class="service-card scroll-fade">
-          <img src="images/icons/bw-grass-icon.png" class="service-icon">
-          <h4 class="service-title">Grass Installation</h4>
-          <p class="service-description">Laying sod or seeding for a lush, green lawn that's ready to enjoy.</p>
+          <div class="service-icon-wrap">🌱</div>
+          <h4>Grass Installation</h4>
+          <p>Fresh sod or seeding for a full green lawn transformation.</p>
+          <div class="service-tags">
+            <span>High Impact</span>
+          </div>
         </div>
 
-        <!-- Watering -->
         <div class="service-card scroll-fade">
-          <img src="images/icons/bw-watering-icon.png" class="service-icon">
-          <h4 class="service-title">Watering</h4>
-          <p class="service-description">Scheduled watering services to keep your lawn and plants properly hydrated.</p>
+          <div class="service-icon-wrap">💧</div>
+          <h4>Watering Service</h4>
+          <p>Scheduled watering to keep your lawn and plants healthy year-round.</p>
+          <div class="service-tags">
+            <span>Scheduled</span>
+          </div>
         </div>
 
       </div>
+
     </div>
   </section>
 
@@ -662,13 +152,18 @@
           <h3 class="about-title">About Dos Gallos</h3>
           <p class="about-subtitle">With Us the Grass is Greener</p>
           <p class="about-description">
-            We are a landscaping service that takes great pride in their work. Here at Dos Gallos, we treat every project as if it were our own. We strive to deliver timely, reliable, and quality work. From employees with great experience to reliable tools and machinery to get the job done. Our biggest success on a project is being recommended. Please reach out with any questions.
+            We are a landscaping service that takes great pride in their work. Here at Dos Gallos, we treat every
+            project as if it were our own. We strive to deliver timely, reliable, and quality work. From employees with
+            great experience to reliable tools and machinery to get the job done. Our biggest success on a project is
+            being recommended. Please reach out with any questions.
           </p>
           <p class="about-signature">Sincerely,<br>Dos Gallos Team</p>
           <a href="#contact" class="secondary-btn">Book Now</a>
         </div>
         <div class="about-image scroll-fade">
-          <img src="https://static.wixstatic.com/media/d99169_7388fedba3ab44e4ad8ffe1d05a1117b~mv2_d_4608_3072_s_4_2.jpg/v1/fill/w_704,h_926,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d99169_7388fedba3ab44e4ad8ffe1d05a1117b~mv2_d_4608_3072_s_4_2.jpg" alt="Dos Gallos Landscaping" />
+          <img
+            src="https://static.wixstatic.com/media/d99169_7388fedba3ab44e4ad8ffe1d05a1117b~mv2_d_4608_3072_s_4_2.jpg/v1/fill/w_704,h_926,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d99169_7388fedba3ab44e4ad8ffe1d05a1117b~mv2_d_4608_3072_s_4_2.jpg"
+            alt="Dos Gallos Landscaping" />
         </div>
       </div>
     </div>
@@ -682,14 +177,14 @@
         <div class="quote-image scroll-fade">
           <img
             src="https://static.wixstatic.com/media/d99169_52d1d64a2a084379a42689b9cb93866d~mv2_d_4608_3072_s_4_2.jpg/v1/fill/w_704,h_1021,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/d99169_52d1d64a2a084379a42689b9cb93866d~mv2_d_4608_3072_s_4_2.jpg"
-            alt="Get a Free Quote"
-          />
+            alt="Get a Free Quote" />
         </div>
         <!-- Text Content -->
         <div class="quote-text scroll-fade">
           <h3 class="quote-title">Get a Free Quote Now!</h3>
           <p class="quote-description">
-            Let us help you transform your outdoor space! Reach out today for a free, no-obligation quote tailored to your landscaping needs.
+            Let us help you transform your outdoor space! Reach out today for a free, no-obligation quote tailored to
+            your landscaping needs.
           </p>
           <a href="#contact" class="primary-btn">Book Now</a>
           <p class="quote-call">
@@ -700,29 +195,37 @@
     </div>
   </section>
 
-<!-- Gallery Section -->
-<section id="gallery">
+  <!-- Gallery Section -->
+  <section id="gallery">
     <div class="gallery-container">
       <h3 class="gallery-title scroll-fade">Gallery</h3>
       <div class="gallery-grid">
         <div class="gallery-item scroll-fade">
-          <img src="https://media.istockphoto.com/id/2165553780/photo/low-angle-view-of-a-latino-man-spreading-soil-conditioner-from-a-bag-while-planting-a.jpg?s=612x612&w=0&k=20&c=iitV8Ngq2Sde21QWdqxgpCgTmQ62UeEjNE2dhuSQc9I=" alt="Project 1" />
+          <img
+            src="https://media.istockphoto.com/id/2165553780/photo/low-angle-view-of-a-latino-man-spreading-soil-conditioner-from-a-bag-while-planting-a.jpg?s=612x612&w=0&k=20&c=iitV8Ngq2Sde21QWdqxgpCgTmQ62UeEjNE2dhuSQc9I="
+            alt="Project 1" />
         </div>
         <div class="gallery-item scroll-fade">
-          <img src="https://media.istockphoto.com/id/1658319067/photo/exterior-of-two-story-house-with-two-different-shades-of-brown.jpg?s=612x612&w=0&k=20&c=8GRlaipGMigShueH4Jur8c1fiV8o3P5BGcNpvOyNx5Y=" alt="Project 2" />
+          <img
+            src="https://media.istockphoto.com/id/1658319067/photo/exterior-of-two-story-house-with-two-different-shades-of-brown.jpg?s=612x612&w=0&k=20&c=8GRlaipGMigShueH4Jur8c1fiV8o3P5BGcNpvOyNx5Y="
+            alt="Project 2" />
         </div>
         <div class="gallery-item scroll-fade">
-          <img src="https://media.istockphoto.com/id/2155337506/photo/suburban-gardens.jpg?s=612x612&w=0&k=20&c=KkloGZv15Cw6LFrf4iOtkReynbj4wu5lw6tgRerpKto=" alt="Project 3" />
+          <img
+            src="https://media.istockphoto.com/id/2155337506/photo/suburban-gardens.jpg?s=612x612&w=0&k=20&c=KkloGZv15Cw6LFrf4iOtkReynbj4wu5lw6tgRerpKto="
+            alt="Project 3" />
         </div>
         <div class="gallery-item scroll-fade">
-          <img src="https://media.istockphoto.com/id/2166214432/photo/colourful-flowers-and-plants-in-a-garden.jpg?s=612x612&w=0&k=20&c=oCr2YMdI7r9yNocZM8c-8wohna8nyElq6Pk7Dov4Zlc=" alt="Project 4" />
+          <img
+            src="https://media.istockphoto.com/id/2165553780/photo/low-angle-view-of-a-latino-man-spreading-soil-conditioner-from-a-bag-while-planting-a.jpg?s=612x612&w=0&k=20&c=iitV8Ngq2Sde21QWdqxgpCgTmQ62UeEjNE2dhuSQc9I="
+            alt="Project 4" />
         </div>
       </div>
       <!-- View Gallery button -->
-      <a href="#gallery" class="view-gallery-btn scroll-fade">View Gallery</a>
+      <!-- <a href="#gallery" class="view-gallery-btn scroll-fade">View Gallery</a> -->
     </div>
   </section>
-  
+
 
   <!-- Why Choose Us Section -->
   <section id="why-us">
@@ -742,6 +245,55 @@
     </div>
   </section>
 
+  <section id="reviews">
+    <div class="container">
+
+      <h3 class="reviews-title scroll-fade">What Our Customers Say</h3>
+      <p class="reviews-subtitle scroll-fade">
+        Real feedback from homeowners who trust Dos Gallos Landscaping
+      </p>
+
+      <div class="reviews-grid">
+
+        <div class="review-card scroll-fade">
+          <div class="accent-bar"></div>
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            "These guys are amazing they removed my tree stumps and replaced it with beautiful grass . Thank u"
+          </p>
+          <div class="review-name">— Victoria Burton</div>
+        </div>
+
+        <div class="review-card scroll-fade">
+          <div class="accent-bar"></div>
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            "10/10"
+          </p>
+          <div class="review-name">— C.C.</div>
+        </div>
+
+        <div class="review-card scroll-fade">
+          <div class="accent-bar"></div>
+          <div class="stars">★★★★★</div>
+          <p class="review-text">
+            "10/10"
+          </p>
+          <div class="review-name">— C.P.</div>
+        </div>
+
+
+      </div>
+
+      <div class="review-cta scroll-fade">
+        <a href="https://share.google/T5CPdfekSmnotYLwB" target="_blank" class="primary-btn">
+          Leave Us a Review
+        </a>
+      </div>
+
+    </div>
+  </section>
+
   <!-- Contact Section -->
   <section id="contact">
     <div class="contact-container scroll-fade">
@@ -757,53 +309,19 @@
 
   <!-- Footer -->
   <footer>
-    <p style="margin-bottom: 0;">&copy; 2025 Dos Gallos Landscaping. All rights reserved.</p>
+    <p style="margin-bottom: 0;">&copy; 2026 Dos Gallos Landscaping. All rights reserved.</p>
+    <div class="social-media">
+      <a href="https://www.instagram.com/dosgallos95/" target="_blank" rel="noopener noreferrer">
+        <img src="images/instagram-white-icon.png" alt="Instagram" class="social-icon" />
+      </a>
+    </div>
   </footer>
 
   <!-- Bootstrap JS and Popper.js -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <script src="/scripts/scrollFade.js"></script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      const scrollElements = document.querySelectorAll(".scroll-fade");
-
-      function elementInView(el, offset = 0) {
-        const elementTop = el.getBoundingClientRect().top;
-        return (
-          elementTop <= (window.innerHeight || document.documentElement.clientHeight) - offset
-        );
-      }
-
-      function elementOutOfView(el) {
-        const elementTop = el.getBoundingClientRect().top;
-        const elementBottom = el.getBoundingClientRect().bottom;
-        return elementBottom < 0 || elementTop > window.innerHeight;
-      }
-
-      function displayScrollElement(el) {
-        el.classList.add("show");
-      }
-
-      function hideScrollElement(el) {
-        el.classList.remove("show");
-      }
-
-      function handleScrollAnimation() {
-        scrollElements.forEach((el) => {
-          if (elementInView(el, 100)) {
-            displayScrollElement(el);
-          } else if (elementOutOfView(el)) {
-            hideScrollElement(el);
-          }
-        });
-      }
-
-      window.addEventListener("scroll", handleScrollAnimation);
-      window.addEventListener("resize", handleScrollAnimation);
-      handleScrollAnimation(); // initial check
-    });
-  </script>
- 
 </body>
+
 </html>
