@@ -408,7 +408,7 @@ html {
 
     /* Gallery Section */
     #gallery {
-      padding: 60px 0;
+      padding: 60px;
       background-color: #ffffff;
     }
 
@@ -447,11 +447,9 @@ html {
     .view-gallery-btn {
       display: inline-block;
       margin-top: 20px;
-      /* Adds space between the grid and the button */
       padding: 12px 24px;
       font-size: 16px;
       background-color: #276749;
-      /* You can change the color */
       color: white;
       font-weight: bold;
       text-decoration: none;
