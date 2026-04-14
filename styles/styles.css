@@ -112,7 +112,7 @@ html {
 
     .social-media {
       margin-top: 20px;
-      text-align: center;
+      text-align: left;
     }
 
     .social-icon {
@@ -153,6 +153,10 @@ html {
 
       .hero-right {
         margin-top: 20px;
+      }
+
+      .social-media {
+        text-align: center;
       }
     }
 
